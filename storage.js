@@ -15,6 +15,13 @@ class Storage {
 
     constructor(filePath) {
         this.filePath = filePath;
+        this.createFile();
+    }
+
+    createFile() {
+        if (!fs.existsSync(this.filePath)) {
+            fs.writeFileSync(this.filePath, '{}');
+        }
     }
 
     async read() {
