@@ -12,7 +12,7 @@ const THIRTY_SEC = 30000;
 const groups = {};
 
 // TODO: Enable storage when prod environment supports it
-const ENABLE_STORAGE = false;
+const ENABLE_STORAGE = process.env.ENABLE_STORAGE;
 if (ENABLE_STORAGE) {
     // Create storage accessor for gimps.json
     const gimpStorage = new Storage(DATA_FILE_PATH);
